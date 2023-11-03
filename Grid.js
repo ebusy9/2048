@@ -8,7 +8,17 @@ export default class Grid {
         gridElement.style.setProperty("--grid-size", GRID_SIZE)
         gridElement.style.setProperty("--cell-size", `${CELL_SIZE}vmin`)
         gridElement.style.setProperty("--cell-gap", `${CELL_GAP}vmin`)
-        createCellElement(gridElement)
+        this.cells = createCellElement(gridElement).map((cellElement, index) => {
+            return new Cell(cellElement, index % GRID_SIZE, Math.floor(index / GRID_SIZE))
+        })
+    }
+}
+
+class Cell {
+    constructor(cellElement, x, y){
+        this.cellElement = cellElement
+        this.x = x
+        this.y = y
     }
 }
 
