@@ -15,6 +15,12 @@ export default class Tile {
         this.#tileElement.remove()
     }
 
+    waitForTransition(animation = false) {
+        return new Promise(resolve => {
+            this.#tileElement.addEventListener(animation ? "animationend" : "transitionend", resolve, { once: true })
+        })
+    }
+
     set value(v) {
         this.#value = v
         this.#tileElement.textContent = v
