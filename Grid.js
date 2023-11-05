@@ -19,6 +19,11 @@ export default class Grid {
         })
     }
 
+    randomEmptyCell(){
+        const randomIndex = Math.floor(Math.random() * this.#emptyCells.length)
+        return this.#emptyCells[randomIndex]
+    }
+
     get #emptyCells() {
         return this.#cells.filter(cell => cell.tile == null)
     }
@@ -39,10 +44,10 @@ export default class Grid {
         }, [])
     }
 
-    randomEmptyCell(){
-        const randomIndex = Math.floor(Math.random() * this.#emptyCells.length)
-        return this.#emptyCells[randomIndex]
+    get cells() {
+        return this.#cells
     }
+
 }
 
 class Cell {
@@ -60,6 +65,13 @@ class Cell {
 
     canAccept(tile) {
         return (this.tile == null || (this.mergeTile == null && this.tile.value === tile.value))
+    }
+
+    mergeTiles(){
+        if(this.tile == null || this.mergeTile == null) return
+        this.tile.value = this.tile.value + this.mergeTile.value
+        this.mergeTile.remove()
+        this.mergeTile = null
     }
 
     get tile(){
