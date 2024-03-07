@@ -2,10 +2,10 @@
 
 Dive into the addictive world of 2048 with our JavaScript rendition! 🚀<br>
 
-![alt preview](https://i.imgur.com/6lb3FK5.gif)
+![alt preview](https://raw.githubusercontent.com/enypy/ReadMeAssetsVault/main/2048/main.gif)
 <br>
 
-Check out the live game: [2048](https://evgenii-2048.projets.garage404.com "2048") 🌐
+Check out the live game: [2048](https://2048.evgenii.fr/) 🌐
 
 ## Overview 📚
 2048 is a JavaScript-based implementation of the classic game "2048." This project serves as a playground for practicing Object-Oriented Programming (OOP) principles.
